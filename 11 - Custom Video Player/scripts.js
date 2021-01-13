@@ -5,6 +5,8 @@ const progressBar = player.querySelector('.progress__filled');
 const toggle = player.querySelector('.toggle');
 const skipButtons = player.querySelector('[data-skip]');
 const ranges = player.querySelector('.player__slider');
+const backButton = document.getElementById('backwards');
+const frontButton = document.getElementById('forwards');
 
 function togglePlay() {
   if (video.paused) {
@@ -18,8 +20,18 @@ function updateButton() {
   toggle.textContent = icon;
 }
 
+function skip() {
+  console.log(this.dataset.skip)
+  video.currentTime += parseFloat(this.dataset.skip);
+}
+
 video.addEventListener('click', togglePlay);
 video.addEventListener('play', updateButton);
 video.addEventListener('pause', updateButton);
 
 toggle.addEventListener('click', togglePlay);
+
+backButton.addEventListener('click', skip);
+frontButton.addEventListener('click', skip);
+
+
