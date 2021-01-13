@@ -37,6 +37,11 @@ function handleProgress() {
   progressBar.style.flexBasis = `${percent}%`;
 }
 
+function scrub(e) {
+  const srubTime = (e.offsetX / progress.offsetWidth) * video.duration;
+  video.currentTime = srubTime;
+}
+
 video.addEventListener('click', togglePlay);
 video.addEventListener('play', updateButton);
 video.addEventListener('pause', updateButton);
@@ -54,5 +59,9 @@ volumeSlider.addEventListener('change', handleRangeUpdate);
 volumeSlider.addEventListener('mousemove', handleRangeUpdate); // update to only trigger the event when is click down and not click up (true or false like previous ex)
 
 // ranges.forEach(range => range.addEventListener('change', handleRangeUpdate));
-
+let mousemove = false;
+progress.addEventListener('click', scrub);
+progress.addEventListener('mousemove', (e) => mousedown && scrub(e));
+progress.addEventListener('mousedown', () => mousedown = true);
+progress.addEventListener('mouseup', () => mousedown = false);
 
