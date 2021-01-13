@@ -13,3 +13,5 @@ function togglePlay() {
     video.paused();
   }
 }
+
+video.addEventListener('click', togglePlay);
