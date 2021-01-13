@@ -10,8 +10,15 @@ function togglePlay() {
   if (video.paused) {
     video.play();
   } else {
-    video.paused();
+    video.pause();
   }
+}
+function updateButton() {
+  console.log('Update the Button')
 }
 
 video.addEventListener('click', togglePlay);
+video.addEventListener('play', updateButton);
+video.addEventListener('pause', updateButton);
+
+toggle.addEventListener('click', togglePlay);
