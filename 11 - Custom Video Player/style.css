@@ -68,8 +68,8 @@ body {
   position: absolute;
   bottom: 0;
   width: 100%;
-  transform: translateY(100%) translateY(-5px);
-  transition: all .3s;
+ /* transform: translateY(100%) translateY(-5px);
+  transition: all .3s;*/
   flex-wrap: wrap;
   background: rgba(0,0,0,0.1);
 }
@@ -102,6 +102,10 @@ body {
   background: #ffc600;
   flex: 0;
   flex-basis: 50%;
+}
+
+.fas.fa-expand {
+  font-size: 16px;
 }
 
 /* unholy css to style input type="range" */
