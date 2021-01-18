@@ -32,7 +32,13 @@
 
   function addItem(e) {
     e.preventDefault(); // prevent the page from re-loading
-    console.log('hello');
+    const text = (this.querySelector('[name=item]')).value; // we can use this because this will be the actual form tag and then we will look inside the tag and look for something that have the name attribute of item
+    const item = {
+      text, // would be text: text; but we have shortcut using ES6
+      done: false
+    }
+    this.reset();
+    console.log(item);
   }
 
   addItems.addEventListener('submit', addItem);
