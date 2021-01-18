@@ -36,9 +36,13 @@
     const item = {
       text, // would be text: text; but we have shortcut using ES6
       done: false
-    }
+    };
     items.push(item);
     this.reset();
+  }
+
+  function populateList(plates = [], platesList) { //we equal plates to an empty object so if we don't pass anything our javascript wont break
+
   }
 
   addItems.addEventListener('submit', addItem);
