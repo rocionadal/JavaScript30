@@ -38,12 +38,20 @@
       done: false
     };
     items.push(item);
+    populateList(items, itemsList);
     this.reset();
   }
 
   function populateList(plates = [], platesList) { //we equal plates to an empty object so if we don't pass anything our javascript wont break
-    plates.map(())
-  }
+    platesList.innerHTML = plates.map((plate, i) => {
+      return `
+      <li>
+        <input type="checkbox" data-index=${i} id="item${i}" ${plate.done ? 'checked' : ''} />
+        <label for="item${i}">${plate.text}</label>
+      </li>
+      `;
+    }).join(''); //take the array that map gives us and turn it into a big string
+  } // look for how to update only one item (react or angular)
 
   addItems.addEventListener('submit', addItem);
 
