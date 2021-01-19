@@ -28,7 +28,7 @@
 <script>
   const addItems = document.querySelector('.add-items');
   const itemsList = document.querySelector('.plates');
-  const items = [];
+  const items = JSON.parse(localStorage.getItem('items')) || [];
 
   function addItem(e) {
     e.preventDefault(); // prevent the page from re-loading
@@ -39,6 +39,7 @@
     };
     items.push(item);
     populateList(items, itemsList);
+    localStorage.setItem('items', JSON.stringify(items));
     this.reset();
   }
 
@@ -54,6 +55,8 @@
   } // look for how to update only one item (react or angular)
 
   addItems.addEventListener('submit', addItem);
+
+  populateList(items, itemsList);
 
 </script>
 
