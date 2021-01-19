@@ -56,7 +56,8 @@
 
   function toggleDone(e) {
     if (!e.target.matches('input')) return; //skip this unless click i'ts on input
-
+    const el = e.target;
+    const index = el.dataset.index;
   }
 
   addItems.addEventListener('submit', addItem);
