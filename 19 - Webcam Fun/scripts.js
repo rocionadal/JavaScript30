@@ -40,9 +40,17 @@ function takePhoto() {
   strip.insertBefore(link, strip.firstChild);
 
 // link.textContent = 'Download Image';
-
 }
 
+function redEffect(pixels) {
+  for(let i = 0, i < pixels.length; i+=4) {
+    pixels.data[i + 0] = pixels.data[i + 0] + 200; // Red
+    pixels.data[i + 1] = pixels.data[i + 1] - 50; // Green
+    pixels.data[i + 2] = pixels.data[i + 2] * 0.5; // Blue
+  }
+  return pixels;
+}
 
 getVideo();
+
 video.addEventListener('canplay', paintToCanvas);
