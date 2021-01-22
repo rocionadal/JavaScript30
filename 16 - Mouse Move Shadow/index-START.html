@@ -51,7 +51,12 @@
     const xWalk = Math.round((x / width * walk) - (walk / 2)); //if 100 is our max, we want to go from 50 to -50
     const yWalk = Math.round((y / width * walk) - (walk / 2)); //if 100 is our max, we want to go from 50 to -50
 
-    text.style.textShadow = `${xWalk}px ${yWalk}px 0 red`;
+    text.style.textShadow = `
+      ${xWalk}px ${yWalk}px 0 rgb(0, 161, 186),
+      ${xWalk * -1}px ${yWalk}px 0 rgb(79, 145, 155),
+      ${yWalk}px ${xWalk * -1}px 0 rgb(111, 200, 214),
+      ${yWalk * -1}px ${xWalk}px 0 rgb(179, 240, 249)
+    `;
     console.log(xWalk, yWalk);
 
   }
