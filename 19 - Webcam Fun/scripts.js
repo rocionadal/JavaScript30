@@ -26,5 +26,10 @@ function paintToCanvas() {
   ctx.drawImage(video, 0, 0, width, height);
  }, 16);
 }
+function takePhoto() {
+  snap.currentTime = 0;
+  snap.play();
+}
 
 getVideo();
+video.addEventListener('canplay', paintToCanvas);
