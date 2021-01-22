@@ -54,7 +54,10 @@ function strip(bandName) {
 
 const sortedBands = bands.sort((a,b) => strip(a) > strip(b) ? 1 : -1);
 
-document.querySelector('#bands').innerHTML = sortedBands.map(band => `<li>${band}</li>`).join('');
+document.querySelector('#bands').innerHTML =
+  sortedBands
+    .map(band => `<li>${band}</li>`)
+    .join(''); // we use the join beauce when you grab an array an print each string, it will automatically convert them with toString() and apply a comma after each sentence that's why we use join '' so we avoid joining the sentences with a comma
 
 console.log(sortedBands);
 
