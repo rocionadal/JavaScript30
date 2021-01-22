@@ -185,6 +185,7 @@
 
   const timeNodes = Array.from(document.querySelectorAll('[data-time')); // as this is a node list we have to convert it into an array
 
+  const seconds = timeNodes.map(node => node.dataset.time);
 </script>
 </body>
 </html>
