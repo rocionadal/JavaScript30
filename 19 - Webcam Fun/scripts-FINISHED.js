@@ -98,7 +98,7 @@ function greenScreen(pixels) {
       && green <= levels.gmax
       && blue <= levels.bmax) {
       // take it out!
-      pixels.data[i + 3] = 0;
+      pixels.data[i + 3] = 0; // if we set it to 0 its going to be totally transparent
     }
   }
 
