@@ -5,7 +5,6 @@
   <title>Follow Along Nav</title>
 </head>
 <body>
-  <h2>Cool</h2>
   <nav class="top">
     <div class="dropdownBackground">
       <span class="arrow"></span>
@@ -228,6 +227,17 @@
     this.classList.add('trigger-enter');
     setTimeout(() => this.classList.add('trigger-enter-active'), 150);
     background.classList.add('open');
+
+    const dropdown = this.querySelector('.dropdown'); // we find it here because we only need the one its selected (this)
+    const dropdownCoords = dropdown.getBoundingClientRect();
+    const navCoords = nav.getBoundingClientRect();
+    console.log(dropdownCoords);
+    const coords = {
+      height: dropdownCoords.height,
+      width: dropdownCoords.width
+    };
+    background.style.setProperty('width', `${coords.width}px`);
+    background.style.setProperty('height', `${coords.height}px`);
   }
 
   function handleLeave() {
