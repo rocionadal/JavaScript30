@@ -46,9 +46,12 @@
 
   function logText(e) {
     console.log(this.classList.value);
+    e.stopPropagation(); // don't grab the parents, only the one I clicked
   }
 
-  divs.forEach(div => div.addEventListener('click', logText));
+  divs.forEach(div => div.addEventListener('click', logText, {
+    capture: false // run the function on the way down (false = default)
+  }));
 </script>
 </body>
 </html>
