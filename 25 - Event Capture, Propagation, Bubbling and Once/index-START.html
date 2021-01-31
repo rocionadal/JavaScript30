@@ -51,6 +51,7 @@
 
   divs.forEach(div => div.addEventListener('click', logText, {
     capture: false // run the function on the way down (false = default)
+    once: true // unbinding (div.removeEventListener) it lets you click once but no more, if you want to click again you have to refresh the page
   }));
 </script>
 </body>
